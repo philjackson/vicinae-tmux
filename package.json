@@ -1,0 +1,69 @@
+{
+  "$schema": "https://raw.githubusercontent.com/vicinaehq/vicinae/refs/heads/main/extra/schemas/extension.json",
+  "name": "tmux",
+  "title": "Tmux",
+  "description": "Search, preview and jump to tmux panes",
+  "icon": "icon.png",
+  "author": "philjackson",
+  "license": "MIT",
+  "platforms": [
+    "Linux"
+  ],
+  "categories": [
+    "Developer Tools"
+  ],
+  "commands": [
+    {
+      "name": "search-panes",
+      "title": "Search Tmux Panes",
+      "subtitle": "Tmux",
+      "description": "List every tmux pane across all sessions and jump to one",
+      "keywords": [
+        "tmux",
+        "pane",
+        "terminal",
+        "session"
+      ],
+      "mode": "view"
+    }
+  ],
+  "preferences": [
+    {
+      "name": "terminalCommand",
+      "title": "Terminal command",
+      "description": "Used to attach when no tmux client is running. The tmux attach command is appended.",
+      "type": "textfield",
+      "required": false,
+      "default": "ghostty -e"
+    },
+    {
+      "name": "previewLines",
+      "title": "Preview lines",
+      "description": "How many lines of pane output to show in the preview",
+      "type": "textfield",
+      "required": false,
+      "default": "40"
+    },
+    {
+      "name": "searchLines",
+      "title": "Search depth",
+      "description": "How many lines of scrollback per pane are searched",
+      "type": "textfield",
+      "required": false,
+      "default": "2000"
+    }
+  ],
+  "scripts": {
+    "build": "vici build",
+    "dev": "vici develop",
+    "lint": "vici lint"
+  },
+  "dependencies": {
+    "@vicinae/api": "^0.29.2"
+  },
+  "devDependencies": {
+    "@types/node": "^24.3.0",
+    "@types/react": "19.1.17",
+    "typescript": "5.9.2"
+  }
+}
